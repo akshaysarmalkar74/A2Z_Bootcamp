@@ -1,3 +1,4 @@
+// O(n) Time / O(n) Space
 func fact(num: Int) -> Int {
     guard num >= 1 else { return 1 }
     return num * fact(num: num - 1)
