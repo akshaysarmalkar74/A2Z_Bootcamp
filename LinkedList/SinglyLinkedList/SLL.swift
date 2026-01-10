@@ -157,6 +157,23 @@ class SinglyLinkedList {
         
         return nil
     }
+
+    func reverse() {
+        var prevNode: Node? = nil
+        var curNode = head
+        let oldHead = curNode
+
+        while curNode != nil {
+            let nextNode = curNode?.next
+            curNode?.next = prevNode
+            prevNode = curNode
+            curNode = nextNode
+        }
+
+        self.head = prevNode
+        self.tail = oldHead
+        return prevNode
+    }
     
     func printList() {
         var curNode = self.head
