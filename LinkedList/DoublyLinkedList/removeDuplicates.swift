@@ -14,7 +14,7 @@ func removeDuplicates(_ head: ListNode?) -> ListNode? {
     while let current = curNode {
         if let nextNode = current.next, nextNode.val == current.val {
             current.next = nextNode.next
-            nextNode.prev = current
+            nextNode.next.prev = current
         } else {
             curNode = current.next
         }
